@@ -1,0 +1,10 @@
+{
+  "name": "simultaneous-translator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Real-time speech translation demo with target speech playback",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

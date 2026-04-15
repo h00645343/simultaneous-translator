@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simultaneous Translator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="control-strip">
+        <div class="title-block">
+          <p class="eyebrow">Open Source Speech Translation</p>
+          <h1>同声翻译</h1>
+          <p class="supporting-text">
+            使用本地 Vosk 做语音识别，LibreTranslate 做翻译，Piper 负责目标语音播报。
+          </p>
+        </div>
+
+        <div class="controls">
+          <label class="field">
+            <span>目标语言</span>
+            <select id="targetLanguage"></select>
+          </label>
+
+          <label class="field">
+            <span>输出音色</span>
+            <select id="voiceGender"></select>
+          </label>
+
+          <p id="targetLanguageHint" class="inline-hint">当前输出: 英语</p>
+
+          <button id="listenButton" class="listen-button" type="button">
+            开始收音
+          </button>
+        </div>
+      </section>
+
+      <section class="status-strip">
+        <div class="status-item">
+          <span class="status-label">识别状态</span>
+          <strong id="recognitionStatus">待机</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">翻译状态</span>
+          <strong id="translationStatus">未开始</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">播报状态</span>
+          <strong id="speechStatus">未播报</strong>
+        </div>
+      </section>
+
+      <section class="service-strip">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>本地服务</h2>
+            <span class="panel-meta" id="sourceModel">中文</span>
+          </div>
+          <p id="serviceSummary" class="transcript">正在读取服务状态...</p>
+          <p id="serviceDetails" class="interim-transcript"></p>
+        </div>
+      </section>
+
+      <section class="transcript-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>原始语音转写</h2>
+            <span class="panel-meta">Vosk</span>
+          </div>
+          <p id="sourceTranscript" class="transcript">
+            点击“开始收音”后开始显示识别结果。
+          </p>
+          <p id="interimTranscript" class="interim-transcript"></p>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>目标语言输出</h2>
+            <span class="panel-meta">LibreTranslate + Piper</span>
+          </div>
+          <p id="targetTranscript" class="transcript">
+            译文会在这里累积显示，并自动语音播报。
+          </p>
+        </article>
+      </section>
+
+      <section class="notes-strip">
+        <p>
+          当前版本依赖本地服务启动。Vosk 模型语言要与你说的话一致，Piper 需要提前下载对应目标语言音色。
+        </p>
+      </section>
+    </main>
+
+    <script src="/open-source-app.js"></script>
+  </body>
+</html>
