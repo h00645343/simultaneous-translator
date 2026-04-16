@@ -1,100 +1,190 @@
 # simultaneous-translator
 
-一个开源本地同声翻译初始版：
+一个本地运行的开源同声传译初始版本。
 
-- 浏览器麦克风采集音频
-- Web Audio API 直接把 PCM 音频流送到本地 Vosk WebSocket
-- LibreTranslate 负责目标语言翻译
-- Piper 负责目标语言语音播报
-- 界面支持切换目标语言，默认英语
+当前链路：
 
-## 当前架构
+- 浏览器采集麦克风音频
+- Web Audio API 将 16k PCM 音频流发送到本地 Vosk WebSocket
+- Node 服务接收识别文本并调用 LibreTranslate 翻译
+- Piper 或 VOICEVOX 负责目标语言语音合成
+- 浏览器播放目标语言语音
 
-1. 浏览器采集麦克风
-2. 浏览器把 16k PCM 流发送给 Vosk
-3. Vosk 返回分段识别文本
-4. Node 服务把文本转给 LibreTranslate
-5. Node 服务再向 Piper 请求 WAV 音频
-6. 浏览器播放返回的目标语言语音
+当前已支持的重点能力：
 
-## 启动项
+- 目标语言切换，默认英语
+- 输出语音男女声切换，默认男声
+- 日语输出走 VOICEVOX
+- 德语、法语、英语、中文输出走 Piper
+- 输入口音支持自动 / 北方 / 南方修正
 
-先复制 `.env.example` 为 `.env`。
+## 当前本地服务部署
 
-### 1. 启动 Vosk
+本项目当前按下面的本地目录部署：
 
-Vosk WebSocket 服务默认使用 `ws://localhost:2700`。
-
-如果你说中文：
-
-```bash
-docker run -d -p 2700:2700 alphacep/kaldi-cn:latest
-```
-
-如果你说英文：
-
-```bash
-docker run -d -p 2700:2700 alphacep/kaldi-en:latest
-```
-
-参考：
-
-- https://alphacephei.com/vosk/server
-- https://github.com/alphacep/vosk-server
-
-### 2. 启动 LibreTranslate
-
-本地默认地址是 `http://localhost:5000`：
-
-```bash
-pip install libretranslate
-libretranslate
-```
-
-参考：
-
-- https://docs.libretranslate.com/
-- https://github.com/LibreTranslate/LibreTranslate
-
-### 3. 启动 Piper
-
-建议把 Piper 改到 `5001` 端口，避免和 LibreTranslate 冲突：
-
-```bash
-pip install "piper-tts[http]"
-python -m piper.download_voices en_US-lessac-medium
-python -m piper.http_server -m en_US-lessac-medium --port 5001
-```
-
-如果要播报中文或其他目标语言，请再下载对应音色。
-
-参考：
-
-- https://github.com/OHF-Voice/piper1-gpl
-
-### 4. 启动当前项目
-
-```bash
-npm run dev
-```
-
-打开：
-
-```text
-http://localhost:3000
-```
+- Vosk: `D:\software\vosk-server`
+- Vosk 中文模型: `D:\software\vosk-model-small-cn-0.22`
+- LibreTranslate 源码: `D:\software\LibreTranslate-src`
+- LibreTranslate 数据: `D:\software\LibreTranslate-data`
+- Piper: `D:\software\piper`
+- VOICEVOX Engine: `D:\software\voicevox-engine\0.25.1\windows-cpu`
 
 ## 默认端口
 
-- 当前项目: `3000`
+- App: `3004`
 - Vosk WebSocket: `2700`
 - LibreTranslate: `5000`
 - Piper HTTP: `5001`
+- VOICEVOX HTTP: `50021`
+
+## 一键启动与停止
+
+在项目根目录打开 PowerShell：
+
+```powershell
+cd C:\Users\Administrator\.codex\worktrees\7110\simultaneous-translator
+```
+
+启动全部服务：
+
+```powershell
+.\start-all.ps1
+```
+
+重启全部服务：
+
+```powershell
+.\start-all.ps1 -RestartExisting
+```
+
+指定应用端口启动：
+
+```powershell
+.\start-all.ps1 -AppPort 3005 -RestartExisting
+```
+
+停止全部服务：
+
+```powershell
+.\stop-all.ps1
+```
+
+停止脚本默认会清理这些端口：
+
+```text
+2700, 5000, 5001, 50021, 3004, 3005
+```
+
+## 启动脚本位置
+
+- 启动脚本: [start-all.ps1](C:\Users\Administrator\.codex\worktrees\7110\simultaneous-translator\start-all.ps1)
+- 停止脚本: [stop-all.ps1](C:\Users\Administrator\.codex\worktrees\7110\simultaneous-translator\stop-all.ps1)
+
+## 启动后访问地址
+
+默认启动后打开：
+
+```text
+http://localhost:3004
+```
+
+如果使用了 `-AppPort 3005`，则访问：
+
+```text
+http://localhost:3005
+```
+
+## 日志目录
+
+脚本会把输出写到项目本地 `logs` 目录：
+
+```text
+.\logs\
+```
+
+常见日志文件：
+
+- `vosk.out.log`
+- `vosk.err.log`
+- `libretranslate.out.log`
+- `libretranslate.err.log`
+- `piper.out.log`
+- `piper.err.log`
+- `voicevox.out.log`
+- `voicevox.err.log`
+- `app.out.log`
+- `app.err.log`
+
+## 手动启动命令
+
+如果你不想用脚本，也可以分别启动。
+
+### 1. 启动 Vosk
+
+```powershell
+D:\software\vosk-server\.venv\Scripts\python.exe `
+  D:\software\vosk-server\websocket\asr_server.py `
+  D:\software\vosk-model-small-cn-0.22
+```
+
+### 2. 启动 LibreTranslate
+
+```powershell
+$env:XDG_DATA_HOME="D:\software\LibreTranslate-data\share"
+$env:XDG_CONFIG_HOME="D:\software\LibreTranslate-data\config"
+$env:XDG_CACHE_HOME="D:\software\LibreTranslate-data\cache"
+$env:ARGOS_PACKAGES_DIR="D:\software\LibreTranslate-data\packages"
+D:\software\libretranslate\.venv\Scripts\libretranslate.exe `
+  --host 0.0.0.0 `
+  --port 5000 `
+  --load-only zh,en,de,fr,ja
+```
+
+### 3. 启动 Piper
+
+```powershell
+D:\software\piper\.venv\Scripts\python.exe `
+  -m piper.http_server `
+  --host 0.0.0.0 `
+  --port 5001 `
+  --data-dir D:\software\piper\voices `
+  -m D:\software\piper\voices\en_US-lessac-medium.onnx
+```
+
+### 4. 启动 VOICEVOX
+
+```powershell
+D:\software\voicevox-engine\0.25.1\windows-cpu\run.exe `
+  --host 0.0.0.0 `
+  --port 50021
+```
+
+### 5. 启动当前项目
+
+```powershell
+$env:PORT="3004"
+$env:VOICEVOX_URL="http://localhost:50021"
+node .\server.js
+```
+
+## 当前输出语音
+
+Piper 当前已部署的重点音色：
+
+- 英语男声: `en_US-hfc_male-medium`
+- 英语女声: `en_US-hfc_female-medium`
+- 中文男声: `zh_CN-chaowen-medium`
+- 中文女声: `zh_CN-huayan-x_low`
+- 德语男声: `de_DE-thorsten-medium`
+- 德语女声: `de_DE-eva_k-x_low`
+- 法语男声: `fr_FR-tom-medium`
+- 法语女声: `fr_FR-siwis-medium`
+
+日语输出使用 VOICEVOX。
 
 ## 注意
 
-- 这是一个初始版本，重点是把开源链路打通
-- Vosk 的识别语言由你启动的模型决定，不是前端自动切换
-- LibreTranslate 需要安装相应语言模型后，目标语言才能真正可用
-- Piper 需要存在对应目标语言音色，否则无法播报
-- 为了避免扬声器回声重新被识别，播放期间会暂时停止收音，播报完成后自动恢复
+- 首次启动前请确认 `D:` 盘相关依赖目录都存在
+- LibreTranslate 若未成功启动，翻译接口会不可用
+- 浏览器播放语音时，页面会短暂停止收音以减少回声回灌
+- 如果端口已被占用，优先执行 `.\stop-all.ps1` 后再重启

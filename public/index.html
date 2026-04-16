@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simultaneous Translator</title>
+    <title>同声翻译</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
@@ -13,7 +13,8 @@
           <p class="eyebrow">Open Source Speech Translation</p>
           <h1>同声翻译</h1>
           <p class="supporting-text">
-            使用本地 Vosk 做语音识别，LibreTranslate 做翻译，Piper 负责目标语音播报。
+            本地 Vosk 负责语音识别，LibreTranslate 负责翻译，Piper 负责目标语言播报。
+            现在输出语言支持英语、中文、日语、德语、法语；当某种语言没有 Piper 音色时，会回退到浏览器本地语音。
           </p>
         </div>
 
@@ -24,11 +25,17 @@
           </label>
 
           <label class="field">
+            <span>输入口音</span>
+            <select id="sourceAccent"></select>
+            <small id="sourceAccentHint" class="field-help"></small>
+          </label>
+
+          <label class="field">
             <span>输出音色</span>
             <select id="voiceGender"></select>
           </label>
 
-          <p id="targetLanguageHint" class="inline-hint">当前输出: 英语</p>
+          <p id="targetLanguageHint" class="inline-hint">当前输出：英语</p>
 
           <button id="listenButton" class="listen-button" type="button">
             开始收音
@@ -40,6 +47,10 @@
         <div class="status-item">
           <span class="status-label">识别状态</span>
           <strong id="recognitionStatus">待机</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">标准化状态</span>
+          <strong id="normalizationStatus">未开始</strong>
         </div>
         <div class="status-item">
           <span class="status-label">翻译状态</span>
@@ -65,12 +76,13 @@
       <section class="transcript-grid">
         <article class="panel">
           <div class="panel-head">
-            <h2>原始语音转写</h2>
-            <span class="panel-meta">Vosk</span>
+            <h2>标准化输入</h2>
+            <span class="panel-meta">Vosk + 口音修正</span>
           </div>
           <p id="sourceTranscript" class="transcript">
-            点击“开始收音”后开始显示识别结果。
+            点击“开始收音”后，这里会显示经过口音修正后的标准化文本。
           </p>
+          <p id="lastRawTranscript" class="raw-transcript"></p>
           <p id="interimTranscript" class="interim-transcript"></p>
         </article>
 
@@ -80,14 +92,14 @@
             <span class="panel-meta">LibreTranslate + Piper</span>
           </div>
           <p id="targetTranscript" class="transcript">
-            译文会在这里累积显示，并自动语音播报。
+            译文会在这里逐句累积显示，并自动通过扬声器播报。
           </p>
         </article>
       </section>
 
       <section class="notes-strip">
         <p>
-          当前版本依赖本地服务启动。Vosk 模型语言要与你说的话一致，Piper 需要提前下载对应目标语言音色。
+          当前版本会优先使用本地 Piper 播报；若目标语言没有对应 Piper 音色，则自动回退到浏览器本地语音。
         </p>
       </section>
     </main>

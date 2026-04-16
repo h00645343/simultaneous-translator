@@ -46,7 +46,7 @@ select {
 
 .control-strip {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 420px);
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 420px);
   gap: 20px;
   align-items: end;
   padding: 24px;
@@ -75,7 +75,7 @@ select {
 }
 
 .supporting-text {
-  max-width: 34rem;
+  max-width: 36rem;
   margin: 12px 0 0;
   font-size: 16px;
   line-height: 1.6;
@@ -103,6 +103,12 @@ select {
 .status-label,
 .panel-meta {
   font-size: 13px;
+  color: var(--muted);
+}
+
+.field-help {
+  font-size: 12px;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -141,7 +147,7 @@ select {
 
 .status-strip {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
   margin-top: 16px;
 }
@@ -191,12 +197,18 @@ select {
 }
 
 .transcript,
-.interim-transcript {
+.interim-transcript,
+.raw-transcript {
   margin: 0;
   white-space: pre-wrap;
   word-break: break-word;
   line-height: 1.75;
   font-size: 16px;
+}
+
+.raw-transcript {
+  margin-top: 12px;
+  color: var(--muted);
 }
 
 .interim-transcript {

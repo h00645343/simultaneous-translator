@@ -1,0 +1,688 @@
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=12 max-active=5000 lattice-beam=4
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from D:\software\vosk-model-small-cn-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from D:\software\vosk-model-small-cn-0.22/graph/HCLr.fst D:\software\vosk-model-small-cn-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo D:\software\vosk-model-small-cn-0.22/graph/phones/word_boundary.int
+INFO:websockets.server:server listening on 0.0.0.0:2700
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 14682)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 14736)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 40, in recognize
+    message = await websocket.recv()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 562, in recv
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 16795)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 40, in recognize
+    message = await websocket.recv()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 562, in recv
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 938, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 16981)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 17011)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 17031)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 17047)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 17081)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 17096)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 17124)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 17141)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 17168)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 17186)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26715)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26738)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26747)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26756)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26766)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26787)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 40, in recognize
+    message = await websocket.recv()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 562, in recv
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26802)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26812)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26837)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26847)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26864)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26874)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26896)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26906)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26915)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26922)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26930)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26954)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26962)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26972)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 26981)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 27000)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 27025)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 71, in recognize
+    response, stop = await loop.run_in_executor(pool, process_chunk, rec, message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 18, in process_chunk
+    elif rec.AcceptWaveform(message):
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\software\vosk-server\.venv\Lib\site-packages\vosk\__init__.py", line 182, in AcceptWaveform
+    res = _c.vosk_recognizer_accept_waveform(self._handle, data, len(data))
+TypeError: initializer for ctype 'char *' must be a bytes or list or tuple, not str
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 27033)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 27060)
+INFO:root:Config {'sample_rate': 16000}
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\server.py", line 245, in handler
+    await self.ws_handler(self)
+  File "D:\software\vosk-server\websocket\asr_server.py", line 72, in recognize
+    await websocket.send(response)
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 628, in send
+    await self.ensure_open()
+  File "D:\software\vosk-server\.venv\Lib\site-packages\websockets\legacy\protocol.py", line 929, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 27229)
+INFO:root:Config {'sample_rate': 16000}
