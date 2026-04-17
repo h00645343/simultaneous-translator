@@ -11,17 +11,6 @@ $logDir = Join-Path $workspaceRoot "logs"
 
 $services = @(
   @{
-    Name = "Vosk"
-    Port = 2700
-    Command = "D:\software\vosk-server\.venv\Scripts\python.exe"
-    Arguments = @(
-      "D:\software\vosk-server\websocket\asr_server.py",
-      "D:\software\vosk-model-small-cn-0.22"
-    )
-    WorkingDirectory = "D:\software\vosk-server\websocket"
-    Env = @{}
-  },
-  @{
     Name = "LibreTranslate"
     Port = 5000
     Command = "D:\software\libretranslate\.venv\Scripts\libretranslate.exe"
@@ -33,46 +22,8 @@ $services = @(
       XDG_CACHE_HOME = "D:\software\LibreTranslate-data\cache"
       ARGOS_PACKAGES_DIR = "D:\software\LibreTranslate-data\packages"
     }
-  },
-  @{
-    Name = "Piper"
-    Port = 5001
-    Command = "D:\software\piper\.venv\Scripts\python.exe"
-    Arguments = @(
-      "-m",
-      "piper.http_server",
-      "--host",
-      "0.0.0.0",
-      "--port",
-      "5001",
-      "--data-dir",
-      "D:\software\piper\voices",
-      "-m",
-      "D:\software\piper\voices\en_US-lessac-medium.onnx"
-    )
-    WorkingDirectory = "D:\software\piper"
-    Env = @{}
-  },
-  @{
-    Name = "VOICEVOX"
-    Port = 50021
-    Command = "D:\software\voicevox-engine\0.25.1\windows-cpu\run.exe"
-    Arguments = @("--host", "0.0.0.0", "--port", "50021")
-    WorkingDirectory = "D:\software\voicevox-engine\0.25.1\windows-cpu"
-    Env = @{}
-  },
-  @{
-    Name = "App"
-    Port = $AppPort
-    Command = "C:\Program Files\nodejs\node.exe"
-    Arguments = @("server.js")
-    WorkingDirectory = $workspaceRoot
-    Env = @{
-      PORT = [string]$AppPort
-      VOICEVOX_URL = "http://localhost:50021"
-    }
   }
-)
+ )
 
 function Ensure-Directory {
   param([string]$Path)
