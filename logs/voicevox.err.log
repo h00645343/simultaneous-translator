@@ -1,0 +1,9 @@
+voicevox_engine\core\core_initializer.py:99: UserWarning: cpu_num_threads is set to 0. Setting it to an appropriate value.
+2026-04-17T09:51:06.536990+08:00  INFO voicevox_core::synthesizer: 検出されたGPU (DirectMLにはGPU 0が使われます):
+2026-04-17T09:51:06.540785+08:00  INFO voicevox_core::synthesizer:   GPU 0: "Intel(R) UHD Graphics" (128 MiB)
+2026-04-17T09:51:06.540834+08:00  INFO voicevox_core::synthesizer:   GPU 1: "Microsoft Basic Render Driver" (0 B)
+2026-04-17T09:51:06.540856+08:00  INFO voicevox_core::synthesizer: CPUを利用します
+INFO:     Started server process [4452]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:50021 (Press CTRL+C to quit)

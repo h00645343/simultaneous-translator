@@ -134,6 +134,24 @@ function Stop-PortProcess {
   }
 }
 
+function Wait-ForPort {
+  param(
+    [int]$Port,
+    [int]$TimeoutSeconds = 20
+  )
+
+  $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
+  do {
+    if ((Get-ListeningPids -Port $Port).Count -gt 0) {
+      return $true
+    }
+
+    Start-Sleep -Milliseconds 500
+  } while ((Get-Date) -lt $deadline)
+
+  return $false
+}
+
 function Start-ServiceProcess {
   param([hashtable]$Service)
 
@@ -171,8 +189,7 @@ function Start-ServiceProcess {
     -FilePath "$env:SystemRoot\System32\cmd.exe" `
     -ArgumentList @('/d', '/c', $cmdScript) `
     -WindowStyle Hidden `
-    -PassThru `
-    -UseNewEnvironment
+    -PassThru
 
   Write-Host ("Started {0} (PID {1})" -f $Service.Name, $process.Id)
 }
@@ -189,7 +206,9 @@ foreach ($service in $services) {
   }
 
   Start-ServiceProcess -Service $service
-  Start-Sleep -Seconds 2
+  if (-not (Wait-ForPort -Port $service.Port)) {
+    Write-Warning ("{0} did not start listening on port {1} within timeout" -f $service.Name, $service.Port)
+  }
 }
 
 Write-Host ""
